@@ -40,25 +40,21 @@ function App() {
     }; // 정리함수
   }, []);
 
-  console.log(posts);
-
-  const handleDelete = () => {
-    // if (window.confirm('정말 삭제할까요')) {
-    setPosts(posts.filter((posts) => post.id !== id));
-    // }
+  const onDelete = (_id) => {
+    setPosts((prev) => prev.filter((post) => post.id !== _id));
   };
 
-  const handleCreate = () => {};
+  const onCreate = (_id) => {};
 
   return (
     <>
       <Routes>
         <Route path='/' element={<Layout loaded={loaded} />}>
           <Route index element={<Home posts={posts} />} />
-          <Route path='posts' element={<Posts posts={posts} />} />
-          <Route path='posts/:id' element={<PostDetail posts={posts} onDelete={handleDelete} />} />
-          <Route path='posts/new' element={<PostNew posts={posts} onCreate={handleCreate} />} />
-          {/* <Route path='/posts/:id/edit' element={<PostEdit posts={posts} onCreate={handleCreate} />} /> */}
+          <Route path='/posts' element={<Posts posts={posts} />} />
+          <Route path='post/:id' element={<PostDetail posts={posts} onDelete={onDelete} />} />
+          <Route path='post/new' element={<PostNew posts={posts} onCreate={onCreate} />} />
+          {/* <Route path='/post/:id/edit' element={<PostEdit posts={posts} onCreate={onCreate} />} /> */}
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
