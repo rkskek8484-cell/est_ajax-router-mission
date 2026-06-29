@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import styles from './postNew.module.css';
+import styles from './PostNew.module.css';
 
 export default function PostNew({ onCreate }) {
   const [title, setTitle] = useState('');
