@@ -1,17 +1,21 @@
-header {
+.header {
   display: flex;
-  align-items: center;
   gap: 16px;
 }
-h1 {
-  font-size: 20px;
+.header h1 {
+  margin: 0;
+  font-size: 1em;
+}
+.header h1 a {
+  text-decoration: none;
+}
+.nav {
+  display: flex;
+  gap: 10px;
 }
 .nav a {
   text-decoration: none;
-  display: flex;
-  gap: 12px;
 }
-
 .nav a.open {
   text-decoration: underline;
   font-weight: 700;
