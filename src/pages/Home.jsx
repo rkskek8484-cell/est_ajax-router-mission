@@ -16,7 +16,7 @@ export default function Home({ posts }) {
         </>
       ) : (
         <ul>
-          {posts.map((p) => (
+          {latest.map((p) => (
             <li>
               <Link to={`./post/${p.id}`}>{p.title}</Link>
             </li>
