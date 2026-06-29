@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import styles from './postNew.module.css';
 
 export default function PostEdit({ posts, onUpdate }) {
@@ -36,7 +36,7 @@ export default function PostEdit({ posts, onUpdate }) {
     e.preventDefault();
     const trimedTitle = title.trim();
     const trimedContent = content.trim();
-    if (!trimedTitle || trimedContent) {
+    if (!trimedTitle || !trimedContent) {
       alert('제목과 내용을 모두 입력해주세요');
       return;
     }
@@ -69,7 +69,7 @@ export default function PostEdit({ posts, onUpdate }) {
             setContent(e.target.value);
           }}
         ></textarea>
-        <button type='button'>등록</button>
+        <button type='submit'>등록</button>
       </form>
     </>
   );

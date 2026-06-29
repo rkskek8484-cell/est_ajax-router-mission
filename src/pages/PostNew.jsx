@@ -11,7 +11,7 @@ export default function PostNew({ onCreate }) {
     e.preventDefault();
     const trimedTitle = title.trim();
     const trimedContent = content.trim();
-    if (!trimedTitle || trimedContent) {
+    if (!trimedTitle || !trimedContent) {
       alert('제목과 내용을 모두 입력해주세요');
       return;
     }
@@ -44,7 +44,7 @@ export default function PostNew({ onCreate }) {
             setContent(e.target.value);
           }}
         ></textarea>
-        <button type='button'>등록</button>
+        <button type='submit'>등록</button>
       </form>
     </section>
   );
