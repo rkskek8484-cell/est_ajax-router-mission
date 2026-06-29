@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
-import styles from './postNew.module.css';
+import styles from './PostNew.module.css';
 
 export default function PostEdit({ posts, onUpdate }) {
   const [title, setTitle] = useState('');
